@@ -102,7 +102,7 @@ int main()
             cout << c3;
             break;
         case 5:
-            cout << "thank you!";
+            cout << "Thank you!";
             break;
         default:
             cout << "You enter the wrong option";
