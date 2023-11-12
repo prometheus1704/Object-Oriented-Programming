@@ -77,35 +77,10 @@ public:
     cout << "Enter the title of the publication: ";
     cin.ignore();
     getline(cin, title);
-   
-    try
-    { 
-        cout << "Enter the Price of the publication: ";
-        cin >> price;
-        if (price <= 0)
-            throw 1;
-    }
-    catch(int x)
-    {
-         cout<<"INVALID ENTRY of Price!!!"<<endl;
-         cout<<"Enter the valid Price :";
-         cin>>price;
-         cout<<"---------------------"<<endl;
-    }
-    try
-    {
-         cout << "Enter the length of the cassette: ";
-         cin >> length;
-         if(length<=0)
-            throw(2);
-    }
-    catch(int x)
-    {
-         cout << "--------------------------------" << endl;
-         cout << "INVALID ENTRY of Length of the cassette!!!" << endl;
-         cout << "Enter a valid Length:";
-         cin>>length;
-    }
+    cout << "Enter the Price of the publication: ";
+    cin >> price;
+    cout << "Enter the length of the cassette: ";
+    cin >> length;
   }
 
   void display() 
