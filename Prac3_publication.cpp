@@ -26,24 +26,29 @@ public:
     getline(cin, title);
     cout << "Enter the Price of the publication: ";
     cin >> price;
-    try
- {
-  if (price <= 0)
-            throw(2);
- }
- catch(int x)
- {
-  if(x==2)
-     cout<<"INVALID ENTRY of Price!!!"<<endl;
-     cout<<"Enter the valid Price :";
-     cin>>price;
-     cout<<"---------------------"<<endl;
- }
-    try
+    while(price<=0)
     {
+    try
+	{
+		if (price <= 0)
+            throw(2);
+	}
+	catch(int x)
+	{
+		if(x==2)
+		   cout<<"INVALID ENTRY of Price!!!"<<endl;
+		   cout<<"Enter the valid Price :";
+		   cin>>price;
+		   cout<<"---------------------"<<endl;
+	}
+    }
         cout << "Enter the count of the pages: ";
-        cin >> page_count; 
-  if (page_count <= 0)
+        cin >> page_count;
+    while(page_count<=0)
+    {
+    try
+    { 
+		if (page_count <= 0)
             throw 1;
     }
     catch (int x)
@@ -56,11 +61,13 @@ public:
             cin>>page_count;
         }
     }
+    }
     } 
+    
   void display() 
   {
     cout << "The Title of the publication is: " << title << endl;
-    cout << "The price of the publication is: " << price << endl;
+    cout << "The price of the publication is: " << price <<" Rs"<< endl;
     cout << "The page count of the publication is: " << page_count <<" pages"<< endl;
   }
 };
@@ -79,8 +86,42 @@ public:
     getline(cin, title);
     cout << "Enter the Price of the publication: ";
     cin >> price;
+    while(price<=0)
+    {
+    try
+	{
+		if (price <= 0)
+            throw(2);
+	}
+	catch(int x)
+	{
+		if(x==2)
+		   cout<<"INVALID ENTRY of Price!!!"<<endl;
+		   cout<<"Enter the valid Price :";
+		   cin>>price;
+		   cout<<"---------------------"<<endl;
+	}
+    }
     cout << "Enter the length of the cassette: ";
     cin >> length;
+    while(length<=0)
+    {
+    	try
+    	{
+    		if(length<=0)
+    		    throw(3);
+		}
+		catch(int x)
+		{
+			if(x==3)
+			{
+				cout<<"INVALID ENTRY of Price!!!"<<endl;
+		        cout<<"Enter the valid length :";
+		        cin>>length;
+		        cout<<"---------------------"<<endl;
+			}
+		}
+	}
   }
 
   void display() 
@@ -99,8 +140,6 @@ int main()
   int op, ch;
   int i;
   int publication_count = 0;
-  int b_count=0;
-  int c_count=0;
   do
   {
   
@@ -111,16 +150,18 @@ int main()
   cout << "4: Exit"<<endl;
   cout << "Enter your choice: ";
   cin >> op;
+  
 
   switch (op)
   {
-    
+  		
     case 1:
     cout << "----------MENU----------" << endl;
     cout << "1: Create a publication of Book" << endl;
     cout << "2: Create a publication of Cassette" << endl;
     cout << "Enter your choice: ";
     cin >> ch;
+    cout << "------------------------" <<endl;
 
     switch (ch)
     {
@@ -129,17 +170,13 @@ int main()
       b->get();
       p[publication_count]=b;
       publication_count++;
-      b_count++;
       break;
-      
     case 2:
       c = new Cassette;
       c->get();
       p[publication_count]=c;
       publication_count++;
-      c_count++;
       break;
-      
     default:
       cout << "Invalid choice" << endl;
       break;
@@ -155,13 +192,11 @@ int main()
     break;
     
     case 3:
-     cout<<"The Total number of publication Present in the database : "<<publication_count<<endl;
-     cout<<"The Total number of Book publication in the database is : "<<b_count<<endl;
-     cout<<"The Total Number of Cassette publication in the Database is : "<<c_count<<endl;
-     break;
-     
+    	cout<<"The Total number publication Present in the database:"<<publication_count<<endl;
+    	break;
+    	
     case 4:
-    break;
+  		break;
   default:
     cout << "Invalid choice" << endl;
     break;
