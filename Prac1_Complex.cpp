@@ -69,8 +69,7 @@ int main()
     cin >> c1;
     cin >> c2;
     cout << "The two complex numbers are as follows:" << endl;
-    cout << c1
-         << c2 << endl;
+    cout << c1 << c2 << endl;
     int flag = 1, option;
     do
     {
