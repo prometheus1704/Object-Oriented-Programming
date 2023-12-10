@@ -8,24 +8,7 @@ int main()
 	int pop;
 	map<string,int> states;
 	map<string,int>::iterator iter;
-	/*for(int j=0;j<4; j++)
-	{
-		cout<<"Enter State : ";
-		cin>>name;
-		cout<<"Enter Population : ";
-		cin>>pop;
-		states.insert(pair<string,int>(name,pop));
-	}
-	cout<<"Enter state to check : ";
-	cin>>name;
-	if(states.find(name)!=states.end())
-	{
-		pop = states[name];
-		cout<<"Population : "<<pop<<endl;
-	}
-	else cout<<"\nState not present : ";
-	for(iter = states.begin(); iter != states.end(); iter++)
-		cout<<iter -> first<<"\t"<< iter -> second;*/
+	
 	int num, flag = 1, ch;
 	while(flag == 1)
 	{
